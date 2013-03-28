@@ -75,6 +75,17 @@ KISSY.add时，会把模块注册到S.Env.mods中，里面保留有模块的文�
 
 KISSY支持自动combo的功能，通过一次http请求一次性抓取属于同一域名下的静态资源，如需配置combo
 
+	KISSY.config('modules', {
+		'myMods/alertmod': {
+			requires: ['dom', 'event']	
+		}
+	});
+
+	KISSY.config('combine', true);
+
+	KISSY.add('myMods/alertmod', function(S, DOM, EVENT) {
+		...	
+	})
 
 #### 4. Combo
 
