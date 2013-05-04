@@ -2,8 +2,8 @@
 
 ## 目录结构
 glodcoin/2.0
-	|--build.xml
-	|--glodcoin.css
+    |--build.xml
+    |--glodcoin.css
 	|--glodcoin.shtml
 	|--dialog-demo.shtml
 	|--data
