@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]><html class="no-js ie ie6 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lte9 lte8"> <![endif]-->
+<!--[if IE 9]><html class="no-js ie ie9 lte9"> <![endif]-->
+<!--[if gt IE 9]><html class="no-js"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>
+	</title>
+	<script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy.js"></script>
+</head>
+<body>
+	<style>
+		#J_tab {
+			padding:5px;
+			background:red;
+			width:400px;
+		}
+		.tab-content {
+			position:relative;
+		}
+		.tab-pannel {
+			height:20px;
+			line-height:20px;
+		}
+	</style>
+	<div id="J_tab" class="slide-style">
+		<div class="tab-content"><!--选项卡内容的父容器-->
+			<div class="tab-pannel"><!--选项卡的每项的容器-->
+				TAB1
+			</div>
+			<!--一般情况下，需要指定默认情况非首帧是否显示-->
+			<div class="tab-pannel hidden">
+				TAB2
+			</div>
+			<div class="tab-pannel hidden">
+				TAB3
+			</div>
+			<div class="tab-pannel hidden">
+				TAB4
+			</div>
+			<div class="tab-pannel hidden">
+				TAB5
+			</div>
+			<div class="tab-pannel hidden">
+				TAB6
+			</div>
+			<div class="tab-pannel hidden">
+				TAB7
+			</div>
+		</div>
+	</div>
+	<script>
+		KISSY.use('gallery/slide/1.0/',function(S,Slide){
+			new Slide('J_tab',{
+				//eventype:'click',//tab上的触发事件
+				//effect:'fade',//切换效果为纵向滚动
+				autoSlide:true,//自动播放
+				timeout:2000,//切换时间间隔
+				speed:500,//切换速度，越小越快，单位为毫秒
+				//hoverStop:true//鼠标经过内容是否停止播放
+				effect:'hSlide', //水平切换
+				carousel:true, //可以配置为跑马灯,也可以为false
+				colspan:4, // 定义跨度为3
+				layerSlide:true
+			});
+		});
+	</script>
+</body>
+</html>
