@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]><html class="no-js ie ie6 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lte9 lte8"> <![endif]-->
+<!--[if IE 9]><html class="no-js ie ie9 lte9"> <![endif]-->
+<!--[if gt IE 9]><html class="no-js"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>
+	</title>
+	<script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy.js"></script>
+</head>
+<body>
+	<style>
+		.ks-overlay {
+			position: absolute;
+			left: -9999px;
+			top: -9999px;
+		}
+		.ks-overlay-hidden {
+			visibility: hidden;
+		}
+		.ks-overlay-mask-hidden {
+			display: none;
+		}
+		.ks-overlay-shown {
+			visibility: visible;
+		}
+		.ks-overlay-mask-shown {
+			display: block;
+		}
+		.ks-dialog {
+			box-shadow: 0px 5px 20px #292929;
+			outline: none;
+		}
+		.ks-ext-mask {
+			background-color: #000;
+			opacity: 0.3;
+		}
+		.ks-ext-close {
+			border: 1px solid transparent;
+			right: 3px;
+			top: 3px;
+			vertical-align: middle;
+			position: absolute;
+			text-decoration: none;
+			outline: none;
+			_border-color: tomato;
+			_filter: chroma(color = tomato);
+			overflow: hidden;
+			cursor: pointer;
+		}
+		.ks-ext-close .ks-ext-close-x {
+			display: block;
+			background: no-repeat;
+			background-image: url("sprite-new.png");
+			background-position: 0 -185px;
+			height: 21px;
+			text-indent: -9999px;
+			width: 21px;
+			margin: 2.5px;
+		}
+		.content-wrap {
+			background-color: #fff;
+			padding-top: 15px;
+		}
+		.face {
+			background: url(sprite-new.png) center no-repeat;
+			background-position: 0 -133px;
+			width: 52px;
+			height: 52px;
+			margin: auto;
+		}
+		.title {
+			text-align: center;
+			font-family: "微软雅黑";
+			font-size: 20px;
+			font-weight: bold;
+			margin: 15px 0 20px 0;
+			color: orange;
+		}
+		.content {
+			font-family: "微软雅黑";
+			font-size: 14px;
+			line-height: 20px;
+			padding: 0 40px;
+			margin-bottom: 15px;
+		}
+		.border-wrap {
+			background-color: orange;
+		}
+		.border {
+			background: url(sprite-new.png) center no-repeat;
+			background-position: -22px -185px;
+			width: 53px;
+			height: 11px;
+			margin: auto;
+		}
+		.btn-wrap {
+			background-color: orange;
+			padding: 10px 0;
+		}
+		.btn {
+			background: url(sprite-new.png) center no-repeat;
+			background-position: -2px -210px;
+			width: 164px;
+			height: 47px;
+			margin: auto;
+			cursor: pointer;
+		}
+	</style>
+	<div class="click">click me</div>
+	<script>
+		KISSY.use('dom,event,overlay',function(S, DOM, EVENT, Overlay){
+			var content = '<div class="content-wrap">' +
+							'<div class="face"></div>' + 
+							'<div class="title">领取成功</div>' +
+							'<div class="content">阿斯顿撒旦阿斯顿阿斯顿，阿斯顿撒旦。阿斯顿阿斯顿。</div>' +
+							'<div class="border-wrap"><div class="border"></div></div>' +
+							'<div class="btn-wrap"><div class="btn"></div></div>' +
+						  '</div>';
+			var dialog = new Overlay.Dialog({
+				width: 350,
+				bodyContent: content,
+				mask: true,
+				align: {
+					points: ['cc', 'cc']
+				}
+			});
+
+			EVENT.on('.click', 'click', function() {
+				dialog.show();
+			});
+			
+			EVENT.delegate('body', 'click', '.btn', function() {
+				dialog.hide();
+			});
+		});
+	</script>
+</body>
+</html>
